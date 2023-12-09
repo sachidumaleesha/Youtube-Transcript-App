@@ -20,9 +20,11 @@ if st.button("Get Transcript"):
     if isValid:
         if "v=" in youtube_link:
             video_id = youtube_link.split("v=")[1]
-        else:
+        elif "shorts/" in youtube_link:
             video_id = youtube_link.split("shorts/")[1]
-
+        else:
+            video_id = youtube_link.split("be/")[1].split("?")[0]
+        
         # Check if the video is playable
         if youtube.is_playable(video_id):
             video_title = youtube.get_title(video_id)
