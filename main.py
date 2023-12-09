@@ -9,8 +9,10 @@ isValid = youtube.is_youtube(youtube_link)
 if isValid:
     if "v=" in youtube_link:
         video_id = youtube_link.split("v=")[1]
-    else:
+    elif "shorts/" in youtube_link:
         video_id = youtube_link.split("shorts/")[1]
+    else:
+        video_id = youtube_link.split("be/")[1].split("?")[0]
 
     if youtube.is_playable(video_id):
         video_title = youtube.get_title(video_id)
