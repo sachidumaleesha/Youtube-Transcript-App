@@ -22,7 +22,7 @@ language_codes = [
 
 def is_youtube(url):
     parsed = urlparse(url)
-    return parsed.netloc in ['www.youtube.com', 'youtube.com']
+    return parsed.netloc in ['www.youtube.com', 'youtube.com', 'youtu.be']
 
 def is_playable(video_id):
     try:
